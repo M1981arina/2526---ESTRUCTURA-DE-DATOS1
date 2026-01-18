@@ -1,0 +1,18 @@
+ public int Buscar(int valor)
+    {
+        int contador = 0;
+        Nodo actual = cabeza;
+
+        while (actual != null)
+        {
+            if (actual.Dato == valor)
+                contador++;
+
+            actual = actual.Siguiente;
+        }
+
+        if (contador == 0)
+            Console.WriteLine("El dato no fue encontrado en la lista.");
+
+        return contador;
+    }

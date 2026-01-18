@@ -1,0 +1,15 @@
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\bin\Debug\net10.0\semana006.exe
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\bin\Debug\net10.0\semana006.deps.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\bin\Debug\net10.0\semana006.runtimeconfig.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\bin\Debug\net10.0\semana006.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\bin\Debug\net10.0\semana006.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.AssemblyInfoInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.AssemblyInfo.cs
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.csproj.CoreCompileInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.sourcelink.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\refint\semana006.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\semana006.genruntimeconfig.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\semana006\obj\Debug\net10.0\ref\semana006.dll

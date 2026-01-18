@@ -1,0 +1,217 @@
+Crear un programa que permita llevar el registro de los vehículos del estacionamiento del
+Área de Ingeniería de Sistemas de la Universidad utilizando como estructura de
+almacenamiento listas enlazadas. Los datos solicitados por cada vehículo son: placa,
+marca, modelo, año y precio. El programa debe permitir realizar las siguientes
+operaciones:
+a. Agregar vehículo.
+b. Buscar vehículo por placa.
+c. Ver vehículos por año.
+d.
+Ver todos los vehículos registrados.
+e. Eliminar carro registrado.
+
+using System;
+
+class Vehiculo
+{
+    public string Placa;
+    public string Marca;
+    public string Modelo;
+    public int Anio;
+    public double Precio;
+    public Vehiculo Siguiente;
+
+    public Vehiculo(string placa, string marca, string modelo, int anio, double precio)
+    {
+        Placa = placa;
+        Marca = marca;
+        Modelo = modelo;
+        Anio = anio;
+        Precio = precio;
+        Siguiente = null;
+    }
+}
+
+class ListaVehiculos
+{
+    private Vehiculo cabeza;
+
+    // a. Agregar vehículo
+    public void AgregarVehiculo(string placa, string marca, string modelo, int anio, double precio)
+    {
+        Vehiculo nuevo = new Vehiculo(placa, marca, modelo, anio, precio);
+
+        if (cabeza == null)
+        {
+            cabeza = nuevo;
+        }
+        else
+        {
+            Vehiculo actual = cabeza;
+            while (actual.Siguiente != null)
+            {
+                actual = actual.Siguiente;
+            }
+            actual.Siguiente = nuevo;
+        }
+    }
+
+    // b. Buscar vehículo por placa
+    public Vehiculo BuscarPorPlaca(string placa)
+    {
+        Vehiculo actual = cabeza;
+
+        while (actual != null)
+        {
+            if (actual.Placa == placa)
+                return actual;
+
+            actual = actual.Siguiente;
+        }
+
+        return null;
+    }
+
+    // c. Ver vehículos por año
+    public void MostrarPorAnio(int anio)
+    {
+        Vehiculo actual = cabeza;
+        bool encontrado = false;
+
+        while (actual != null)
+        {
+            if (actual.Anio == anio)
+            {
+                MostrarVehiculo(actual);
+                encontrado = true;
+            }
+            actual = actual.Siguiente;
+        }
+
+        if (!encontrado)
+            Console.WriteLine("No existen vehículos registrados para ese año.");
+    }
+
+    // d. Ver todos los vehículos registrados
+    public void MostrarTodos()
+    {
+        Vehiculo actual = cabeza;
+
+        if (actual == null)
+        {
+            Console.WriteLine("No hay vehículos registrados.");
+            return;
+        }
+
+        while (actual != null)
+        {
+            MostrarVehiculo(actual);
+            actual = actual.Siguiente;
+        }
+    }
+
+    // e. Eliminar carro registrado
+    public bool EliminarVehiculo(string placa)
+    {
+        if (cabeza == null)
+            return false;
+
+        if (cabeza.Placa == placa)
+        {
+            cabeza = cabeza.Siguiente;
+            return true;
+        }
+
+        Vehiculo actual = cabeza;
+
+        while (actual.Siguiente != null)
+        {
+            if (actual.Siguiente.Placa == placa)
+            {
+                actual.Siguiente = actual.Siguiente.Siguiente;
+                return true;
+            }
+            actual = actual.Siguiente;
+        }
+
+        return false;
+    }
+
+    private void MostrarVehiculo(Vehiculo v)
+    {
+        Console.WriteLine($"Placa: {v.Placa} | Marca: {v.Marca} | Modelo: {v.Modelo} | Año: {v.Anio} | Precio: ${v.Precio}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ListaVehiculos lista = new ListaVehiculos();
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("\n--- ESTACIONAMIENTO INGENIERÍA DE SISTEMAS ---");
+            Console.WriteLine("1. Agregar vehículo");
+            Console.WriteLine("2. Buscar vehículo por placa");
+            Console.WriteLine("3. Ver vehículos por año");
+            Console.WriteLine("4. Ver todos los vehículos");
+            Console.WriteLine("5. Eliminar vehículo");
+            Console.WriteLine("0. Salir");
+            Console.Write("Seleccione una opción: ");
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.Write("Placa: ");
+                    string placa = Console.ReadLine();
+                    Console.Write("Marca: ");
+                    string marca = Console.ReadLine();
+                    Console.Write("Modelo: ");
+                    string modelo = Console.ReadLine();
+                    Console.Write("Año: ");
+                    int anio = int.Parse(Console.ReadLine());
+                    Console.Write("Precio: ");
+                    double precio = double.Parse(Console.ReadLine());
+
+                    lista.AgregarVehiculo(placa, marca, modelo, anio, precio);
+                    Console.WriteLine("Vehículo agregado correctamente.");
+                    break;
+
+                case 2:
+                    Console.Write("Ingrese la placa a buscar: ");
+                    string buscar = Console.ReadLine();
+                    Vehiculo v = lista.BuscarPorPlaca(buscar);
+
+                    if (v != null)
+                        Console.WriteLine($"Vehículo encontrado: {v.Marca} {v.Modelo} ({v.Anio})");
+                    else
+                        Console.WriteLine("Vehículo no encontrado.");
+                    break;
+
+                case 3:
+                    Console.Write("Ingrese el año a consultar: ");
+                    int anioConsulta = int.Parse(Console.ReadLine());
+                    lista.MostrarPorAnio(anioConsulta);
+                    break;
+
+                case 4:
+                    lista.MostrarTodos();
+                    break;
+
+                case 5:
+                    Console.Write("Ingrese la placa del vehículo a eliminar: ");
+                    string eliminar = Console.ReadLine();
+
+                    if (lista.EliminarVehiculo(eliminar))
+                        Console.WriteLine("Vehículo eliminado correctamente.");
+                    else
+                        Console.WriteLine("No se encontró el vehículo.");
+                    break;
+            }
+
+        } while (opcion != 0);
+    }
+}

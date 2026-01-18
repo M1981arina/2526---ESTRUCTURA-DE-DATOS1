@@ -1,0 +1,200 @@
+using System;
+
+class Estudiante
+{
+    public string Cedula;
+    public string Nombre;
+    public string Apellido;
+    public string Correo;
+    public int Nota;
+    public Estudiante Siguiente;
+
+    public Estudiante(string cedula, string nombre, string apellido, string correo, int nota)
+    {
+        Cedula = cedula;
+        Nombre = nombre;
+        Apellido = apellido;
+        Correo = correo;
+        Nota = nota;
+        Siguiente = null;
+    }
+}
+
+class ListaEstudiantes
+{
+    private Estudiante cabeza;
+
+    // a. Agregar estudiante
+    public void AgregarEstudiante(string cedula, string nombre, string apellido, string correo, int nota)
+    {
+        Estudiante nuevo = new Estudiante(cedula, nombre, apellido, correo, nota);
+
+        if (nota >= 7) // Aprobado: insertar al inicio
+        {
+            nuevo.Siguiente = cabeza;
+            cabeza = nuevo;
+        }
+        else // Reprobado: insertar al final
+        {
+            if (cabeza == null)
+            {
+                cabeza = nuevo;
+            }
+            else
+            {
+                Estudiante actual = cabeza;
+                while (actual.Siguiente != null)
+                {
+                    actual = actual.Siguiente;
+                }
+                actual.Siguiente = nuevo;
+            }
+        }
+    }
+
+    // b. Buscar estudiante por cédula
+    public Estudiante BuscarPorCedula(string cedula)
+    {
+        Estudiante actual = cabeza;
+
+        while (actual != null)
+        {
+            if (actual.Cedula == cedula)
+                return actual;
+
+            actual = actual.Siguiente;
+        }
+
+        return null;
+    }
+
+    // c. Eliminar estudiante
+    public bool EliminarEstudiante(string cedula)
+    {
+        if (cabeza == null)
+            return false;
+
+        if (cabeza.Cedula == cedula)
+        {
+            cabeza = cabeza.Siguiente;
+            return true;
+        }
+
+        Estudiante actual = cabeza;
+
+        while (actual.Siguiente != null)
+        {
+            if (actual.Siguiente.Cedula == cedula)
+            {
+                actual.Siguiente = actual.Siguiente.Siguiente;
+                return true;
+            }
+            actual = actual.Siguiente;
+        }
+
+        return false;
+    }
+
+    // d y e. Contar aprobados y reprobados
+    public void ContarAprobadosReprobados(out int aprobados, out int reprobados)
+    {
+        aprobados = 0;
+        reprobados = 0;
+
+        Estudiante actual = cabeza;
+
+        while (actual != null)
+        {
+            if (actual.Nota >= 7)
+                aprobados++;
+            else
+                reprobados++;
+
+            actual = actual.Siguiente;
+        }
+    }
+
+    public void MostrarEstudiantes()
+    {
+        Estudiante actual = cabeza;
+
+        while (actual != null)
+        {
+            Console.WriteLine($"Cédula: {actual.Cedula}, Nombre: {actual.Nombre} {actual.Apellido}, Nota: {actual.Nota}");
+            actual = actual.Siguiente;
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ListaEstudiantes lista = new ListaEstudiantes();
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("\n--- REGISTRO DE ESTUDIANTES REDES III ---");
+            Console.WriteLine("1. Agregar estudiante");
+            Console.WriteLine("2. Buscar estudiante por cédula");
+            Console.WriteLine("3. Eliminar estudiante");
+            Console.WriteLine("4. Total aprobados y reprobados");
+            Console.WriteLine("5. Mostrar estudiantes");
+            Console.WriteLine("0. Salir");
+            Console.Write("Seleccione una opción: ");
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.Write("Cédula: ");
+                    string cedula = Console.ReadLine();
+                    Console.Write("Nombre: ");
+                    string nombre = Console.ReadLine();
+                    Console.Write("Apellido: ");
+                    string apellido = Console.ReadLine();
+                    Console.Write("Correo: ");
+                    string correo = Console.ReadLine();
+                    Console.Write("Nota (1-10): ");
+                    int nota = int.Parse(Console.ReadLine());
+
+                    lista.AgregarEstudiante(cedula, nombre, apellido, correo, nota);
+                    Console.WriteLine("Estudiante agregado correctamente.");
+                    break;
+
+                case 2:
+                    Console.Write("Ingrese la cédula a buscar: ");
+                    string buscar = Console.ReadLine();
+                    Estudiante est = lista.BuscarPorCedula(buscar);
+
+                    if (est != null)
+                        Console.WriteLine($"Estudiante encontrado: {est.Nombre} {est.Apellido}, Nota: {est.Nota}");
+                    else
+                        Console.WriteLine("Estudiante no encontrado.");
+                    break;
+
+                case 3:
+                    Console.Write("Ingrese la cédula a eliminar: ");
+                    string eliminar = Console.ReadLine();
+
+                    if (lista.EliminarEstudiante(eliminar))
+                        Console.WriteLine("Estudiante eliminado correctamente.");
+                    else
+                        Console.WriteLine("No se encontró el estudiante.");
+                    break;
+
+                case 4:
+                    lista.ContarAprobadosReprobados(out int aprobados, out int reprobados);
+                    Console.WriteLine("Total aprobados: " + aprobados);
+                    Console.WriteLine("Total reprobados: " + reprobados);
+                    break;
+
+                case 5:
+                    lista.MostrarEstudiantes();
+                    break;
+            }
+
+        } while (opcion != 0);
+    }
+}
