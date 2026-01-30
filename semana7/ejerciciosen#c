@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+
+class Program  // Cambiado de TorresDeHanoi a Program
+{
+    static int contadorPasos = 1;
+
+    static void Main()
+    {
+        Console.Write("Ingrese el número de discos: ");
+        int n;
+        // Validación: asegura entero positivo
+        if (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
+        {
+            Console.WriteLine("Por favor, ingrese un número entero positivo.");
+            return;
+        }
+
+        // Advertencia para n grande
+        if (n > 10)
+        {
+            Console.WriteLine("Advertencia: Con más de 10 discos, los pasos serán muchos. ¿Continuar? (s/n)");
+            string respuesta = Console.ReadLine().ToLower();
+            if (respuesta != "s")
+            {
+                return;
+            }
+        }
+
+        Stack<int> torreOrigen = new Stack<int>();
+        Stack<int> torreAuxiliar = new Stack<int>();
+        Stack<int> torreDestino = new Stack<int>();
+
+        // Inicialización de la torre origen (disco más grande en la base)
+        for (int i = n; i >= 1; i--)
+        {
+            torreOrigen.Push(i);
+        }
+
+        ResolverHanoi(n, torreOrigen, torreDestino, torreAuxiliar, "Origen", "Destino", "Auxiliar");
+    }
+
+    static void ResolverHanoi(
+        int n,
+        Stack<int> origen,
+        Stack<int> destino,
+        Stack<int> auxiliar,
+        string nombreOrigen,
+        string nombreDestino,
+        string nombreAuxiliar)
+    {
+        if (n == 1)
+        {
+            int disco = origen.Pop();
+            destino.Push(disco);
+            Console.WriteLine($"Paso {contadorPasos++}: Mover disco {disco} de {nombreOrigen} a {nombreDestino}");
+            return;
+        }
+
+        ResolverHanoi(n - 1, origen, auxiliar, destino,
+                      nombreOrigen, nombreAuxiliar, nombreDestino);
+
+        int discoMayor = origen.Pop();
+        destino.Push(discoMayor);
+        Console.WriteLine($"Paso {contadorPasos++}: Mover disco {discoMayor} de {nombreOrigen} a {nombreDestino}");
+
+        ResolverHanoi(n - 1, auxiliar, destino, origen,
+                      nombreAuxiliar, nombreDestino, nombreOrigen);
+    }
+}
