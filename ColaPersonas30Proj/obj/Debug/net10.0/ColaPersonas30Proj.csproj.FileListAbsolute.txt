@@ -1,0 +1,15 @@
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\bin\Debug\net10.0\ColaPersonas30Proj.exe
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\bin\Debug\net10.0\ColaPersonas30Proj.deps.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\bin\Debug\net10.0\ColaPersonas30Proj.runtimeconfig.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\bin\Debug\net10.0\ColaPersonas30Proj.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\bin\Debug\net10.0\ColaPersonas30Proj.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.AssemblyInfoInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.AssemblyInfo.cs
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.csproj.CoreCompileInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.sourcelink.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\refint\ColaPersonas30Proj.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ColaPersonas30Proj.genruntimeconfig.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\ColaPersonas30Proj\obj\Debug\net10.0\ref\ColaPersonas30Proj.dll
