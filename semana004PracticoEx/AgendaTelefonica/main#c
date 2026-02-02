@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -108,3 +109,115 @@ int main(void) {
     freeAgenda(&ag);
     return 0;
 }
+=======
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "agenda.h"
+
+static void trimnl(char *s) {
+    s[strcspn(s, "\r\n")] = '\0';
+}
+
+static void readLine(const char *prompt, char *buf, size_t size) {
+    printf("%s", prompt);
+    if (!fgets(buf, (int)size, stdin)) { buf[0] = '\0'; return; }
+    trimnl(buf);
+}
+
+static void addContactInteractive(Agenda *a) {
+    Contact c = {"", "", ""};
+    readLine("Nombre: ", c.name, NAME_MAX);
+    if (c.name[0] == '\0') { puts("Nombre vacío, cancelado."); return; }
+    readLine("Teléfono: ", c.phone, PHONE_MAX);
+    readLine("Email: ", c.email, EMAIL_MAX);
+    addContact(a, c);
+    puts("Contacto agregado.");
+}
+
+static void searchAndPrint(Agenda *a) {
+    char q[NAME_MAX];
+    readLine("Buscar por nombre (subcadena): ", q, sizeof(q));
+    if (q[0] == '\0') { puts("Consulta vacía."); return; }
+    int found = 0;
+    for (size_t i = 0; i < a->count; ++i) {
+        // case-insensitive substring
+        const char *name = a->items[i].name;
+        size_t nlen = strlen(q), hlen = strlen(name);
+        int ok = 0;
+        for (size_t pos=0; pos + nlen <= hlen; ++pos) {
+            size_t j; for (j=0;j<nlen;++j) if (tolower((unsigned char)name[pos+j]) != tolower((unsigned char)q[j])) break;
+            if (j==nlen) { ok = 1; break; }
+        }
+        if (ok) {
+            printf("%zu: %s | %s | %s\n", i+1, name, a->items[i].phone, a->items[i].email);
+            found = 1;
+        }
+    }
+    if (!found) puts("No se encontraron coincidencias.");
+}
+
+static void updateInteractive(Agenda *a) {
+    char buf[32];
+    readLine("Índice del contacto a modificar: ", buf, sizeof(buf));
+    int idx = atoi(buf);
+    if (idx <= 0 || (size_t)idx > a->count) { puts("Índice inválido."); return; }
+    size_t i = (size_t)idx - 1;
+    Contact c = a->items[i];
+    printf("Nombre actual: %s\n", c.name);
+    readLine("Nuevo nombre (ENTER para mantener): ", buf, sizeof(buf)); if (buf[0]) strncpy(c.name, buf, NAME_MAX-1);
+    printf("Teléfono actual: %s\n", c.phone);
+    readLine("Nuevo teléfono (ENTER para mantener): ", buf, sizeof(buf)); if (buf[0]) strncpy(c.phone, buf, PHONE_MAX-1);
+    printf("Email actual: %s\n", c.email);
+    readLine("Nuevo email (ENTER para mantener): ", buf, sizeof(buf)); if (buf[0]) strncpy(c.email, buf, EMAIL_MAX-1);
+    updateContact(a, i, c);
+    puts("Contacto actualizado.");
+}
+
+static void deleteInteractive(Agenda *a) {
+    char buf[32];
+    readLine("Índice del contacto a eliminar: ", buf, sizeof(buf));
+    int idx = atoi(buf);
+    if (idx <= 0 || (size_t)idx > a->count) { puts("Índice inválido."); return; }
+    if (deleteContact(a, (size_t)idx-1)) puts("Contacto eliminado."); else puts("Error al eliminar.");
+}
+
+int main(void) {
+    Agenda ag;
+    initAgenda(&ag);
+    const char *fn = "contacts.csv";
+
+    // try autoload
+    loadContacts(&ag, fn);
+
+    for (;;) {
+        puts("\n=== Agenda Telefónica ===");
+        puts("1) Agregar contacto");
+        puts("2) Listar contactos");
+        puts("3) Buscar");
+        puts("4) Modificar");
+        puts("5) Eliminar");
+        puts("6) Ordenar por nombre");
+        puts("7) Guardar en archivo");
+        puts("8) Cargar desde archivo (añade)");
+        puts("9) Salir");
+        printf("> ");
+        char opt[8]; if (!fgets(opt, sizeof(opt), stdin)) break;
+        int o = atoi(opt);
+        switch (o) {
+            case 1: addContactInteractive(&ag); break;
+            case 2: listContacts(&ag); break;
+            case 3: searchAndPrint(&ag); break;
+            case 4: updateInteractive(&ag); break;
+            case 5: deleteInteractive(&ag); break;
+            case 6: sortContactsByName(&ag); puts("Ordenado."); break;
+            case 7: if (saveContacts(&ag, fn)) puts("Guardado."); else puts("Error al guardar."); break;
+            case 8: if (loadContacts(&ag, fn)) puts("Cargado (añadido)."); else puts("No se pudo abrir el archivo."); break;
+            case 9: saveContacts(&ag, fn); freeAgenda(&ag); puts("Adiós."); return 0;
+            default: puts("Opción inválida."); break;
+        }
+    }
+    freeAgenda(&ag);
+    return 0;
+}
+>>>>>>> 9a6b31b0aee59bf8ab7fe49a8e1d800674cc99b6
