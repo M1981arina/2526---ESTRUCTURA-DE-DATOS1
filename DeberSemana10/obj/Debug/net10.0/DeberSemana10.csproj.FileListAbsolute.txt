@@ -1,0 +1,15 @@
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\bin\Debug\net10.0\DeberSemana10.exe
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\bin\Debug\net10.0\DeberSemana10.deps.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\bin\Debug\net10.0\DeberSemana10.runtimeconfig.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\bin\Debug\net10.0\DeberSemana10.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\bin\Debug\net10.0\DeberSemana10.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.AssemblyInfoInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.AssemblyInfo.cs
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.csproj.CoreCompileInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.sourcelink.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\refint\DeberSemana10.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\DeberSemana10.genruntimeconfig.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\DeberSemana10\obj\Debug\net10.0\ref\DeberSemana10.dll
