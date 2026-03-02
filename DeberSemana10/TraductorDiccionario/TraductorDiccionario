@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+
+class TraductorMejorado
+{
+    static void Main(string[] args)
+    {
+        Dictionary<string, string> diccionario = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            {"time", "tiempo"},
+            {"person", "persona"},
+            {"year", "año"},
+            {"day", "día"},
+            {"world", "mundo"},
+            {"life", "vida"},
+            {"hand", "mano"},
+            {"eye", "ojo"},
+            {"work", "trabajo"},
+            {"week", "semana"}
+        };
+
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("=========== MENÚ ===========");
+            Console.WriteLine("1. Traducir una frase");
+            Console.WriteLine("2. Agregar palabra");
+            Console.WriteLine("0. Salir");
+            Console.Write("Seleccione una opción: ");
+            opcion = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            switch (opcion)
+            {
+                case 1:
+                    Traducir(diccionario);
+                    break;
+
+                case 2:
+                    Agregar(diccionario);
+                    break;
+
+                case 0:
+                    Console.WriteLine("Programa finalizado.");
+                    break;
+
+                default:
+                    Console.WriteLine("Opción incorrecta.");
+                    break;
+            }
+
+            Console.WriteLine();
+
+        } while (opcion != 0);
+    }
+
+    static void Traducir(Dictionary<string, string> diccionario)
+    {
+        Console.Write("Ingrese la frase: ");
+        string frase = Console.ReadLine();
+
+        string[] palabras = frase.Split(' ');
+        string resultado = "";
+
+        foreach (string palabra in palabras)
+        {
+            string limpia = palabra.ToLower().Trim(',', '.', ';', ':', '¡', '!', '¿', '?');
+
+            if (diccionario.ContainsKey(limpia))
+            {
+                resultado += diccionario[limpia] + " ";
+            }
+            else if (diccionario.ContainsValue(limpia))
+            {
+                foreach (var item in diccionario)
+                {
+                    if (item.Value.Equals(limpia, StringComparison.OrdinalIgnoreCase))
+                    {
+                        resultado += item.Key + " ";
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                resultado += palabra + " ";
+            }
+        }
+
+        Console.WriteLine("Traducción: " + resultado.Trim());
+    }
+
+    static void Agregar(Dictionary<string, string> diccionario)
+    {
+        Console.Write("Palabra en inglés: ");
+        string ingles = Console.ReadLine().ToLower();
+
+        Console.Write("Traducción en español: ");
+        string español = Console.ReadLine().ToLower();
+
+        if (!diccionario.ContainsKey(ingles))
+        {
+            diccionario.Add(ingles, español);
+            Console.WriteLine("Palabra agregada correctamente.");
+        }
+        else
+        {
+            Console.WriteLine("Esa palabra ya existe.");
+        }
+    }
+}
