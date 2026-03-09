@@ -1,0 +1,136 @@
+using System;
+using System.Collections.Generic;
+class Libro
+{
+    public int Codigo { get; set; }
+    public string Titulo { get; set; }
+    public string Autor { get; set; }
+
+    public Libro(int codigo, string titulo, string autor)
+    {
+        Codigo = codigo;
+        Titulo = titulo;
+        Autor = autor;
+    }
+
+    public void Mostrar()
+    {
+        Console.WriteLine("Código: " + Codigo);
+        Console.WriteLine("Título: " + Titulo);
+        Console.WriteLine("Autor: " + Autor);
+        Console.WriteLine("---------------------------");
+    }
+}
+
+class Biblioteca
+{
+    static Dictionary<int, Libro> libros = new Dictionary<int, Libro>();
+
+    static void Main()
+    {
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("\n===== SISTEMA DE BIBLIOTECA =====");
+            Console.WriteLine("1. Registrar libro");
+            Console.WriteLine("2. Buscar libro");
+            Console.WriteLine("3. Mostrar todos los libros");
+            Console.WriteLine("4. Eliminar libro");
+            Console.WriteLine("5. Salir");
+            Console.Write("Seleccione una opción: ");
+
+            opcion = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    RegistrarLibro();
+                    break;
+
+                case 2:
+                    BuscarLibro();
+                    break;
+
+                case 3:
+                    MostrarLibros();
+                    break;
+
+                case 4:
+                    EliminarLibro();
+                    break;
+            }
+
+        } while (opcion != 5);
+    }
+
+    static void RegistrarLibro()
+    {
+        Console.Write("Ingrese código del libro: ");
+        int codigo = Convert.ToInt32(Console.ReadLine());
+
+        if (libros.ContainsKey(codigo))
+        {
+            Console.WriteLine("El libro ya existe.");
+            return;
+        }
+
+        Console.Write("Ingrese título: ");
+        string titulo = Console.ReadLine();
+
+        Console.Write("Ingrese autor: ");
+        string autor = Console.ReadLine();
+
+        Libro libro = new Libro(codigo, titulo, autor);
+
+        libros.Add(codigo, libro);
+
+        Console.WriteLine("Libro registrado correctamente.");
+    }
+
+    static void BuscarLibro()
+    {
+        Console.Write("Ingrese el código del libro: ");
+        int codigo = Convert.ToInt32(Console.ReadLine());
+
+        if (libros.ContainsKey(codigo))
+        {
+            libros[codigo].Mostrar();
+        }
+        else
+        {
+            Console.WriteLine("Libro no encontrado.");
+        }
+    }
+
+    static void MostrarLibros()
+    {
+        if (libros.Count == 0)
+        {
+            Console.WriteLine("No hay libros registrados.");
+            return;
+        }
+
+        Console.WriteLine("\nLista de libros:");
+
+        foreach (var libro in libros.Values)
+        {
+            libro.Mostrar();
+        }
+    }
+
+    static void EliminarLibro()
+    {
+        Console.Write("Ingrese el código del libro a eliminar: ");
+        int codigo = Convert.ToInt32(Console.ReadLine());
+
+        if (libros.Remove(codigo))
+        {
+            Console.WriteLine("Libro eliminado correctamente.");
+        }
+        else
+        {
+            Console.WriteLine("Libro no encontrado.");
+        }
+    }
+}

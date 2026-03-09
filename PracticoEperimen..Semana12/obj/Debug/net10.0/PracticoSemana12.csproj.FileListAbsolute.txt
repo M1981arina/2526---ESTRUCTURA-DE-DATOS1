@@ -1,0 +1,15 @@
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\bin\Debug\net10.0\PracticoSemana12.exe
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\bin\Debug\net10.0\PracticoSemana12.deps.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\bin\Debug\net10.0\PracticoSemana12.runtimeconfig.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\bin\Debug\net10.0\PracticoSemana12.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\bin\Debug\net10.0\PracticoSemana12.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.AssemblyInfoInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.AssemblyInfo.cs
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.csproj.CoreCompileInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.sourcelink.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\refint\PracticoSemana12.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\PracticoSemana12.genruntimeconfig.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\PracticoEperimen..Semana12\obj\Debug\net10.0\ref\PracticoSemana12.dll
