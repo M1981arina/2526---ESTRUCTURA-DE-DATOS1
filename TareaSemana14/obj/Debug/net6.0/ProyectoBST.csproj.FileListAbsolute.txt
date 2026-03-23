@@ -1,0 +1,15 @@
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\bin\Debug\net6.0\ProyectoBST.exe
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\bin\Debug\net6.0\ProyectoBST.deps.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\bin\Debug\net6.0\ProyectoBST.runtimeconfig.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\bin\Debug\net6.0\ProyectoBST.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\bin\Debug\net6.0\ProyectoBST.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.AssemblyInfoInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.AssemblyInfo.cs
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.csproj.CoreCompileInputs.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.sourcelink.json
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\refint\ProyectoBST.dll
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.pdb
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ProyectoBST.genruntimeconfig.cache
+C:\Users\Marcimex\Desktop\2526 - ESTRUCTURA DE DATOS\TareaSemana14\obj\Debug\net6.0\ref\ProyectoBST.dll
